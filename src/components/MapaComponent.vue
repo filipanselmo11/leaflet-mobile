@@ -20,6 +20,7 @@ export default {
       this.map = L.map("map").fitWorld();
       this.map.locate({ setView: true, maxZoom: 16 });
       this.map.on("locationfound", this.onLocationFound);
+      this.map.on("locationError", this.onLocationError);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: "© OpenStreetMap",
@@ -34,6 +35,9 @@ export default {
 
       L.circle(e.latlng, radius).addTo(this.map);
     },
+    onLocationError(e){
+        alert(e.message);
+    }
   },
 };
 </script>
