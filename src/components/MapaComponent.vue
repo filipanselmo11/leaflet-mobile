@@ -28,10 +28,10 @@ export default {
     },
     onLocationFound(e) {
       const radius = e.accuracy;
-      L.marker(e.latlng)
-        .addTo(this.map)
-        .bindPopup("You are within " + radius + " meters from this point")
-        .openPopup();
+      // L.marker(e.latlng)
+      //   .addTo(this.map)
+      //   .bindPopup("You are within " + radius + " meters from this point")
+      //   .openPopup();
 
       L.circle(e.latlng, radius).addTo(this.map);
     },
@@ -43,12 +43,7 @@ export default {
 </script>
 
 <style scoped>
-body {
-  padding: 0;
-  margin: 0;
-}
-html,
-body,
+
 #map {
   height: 100%;
   width: 100vw;
